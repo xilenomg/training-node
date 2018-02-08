@@ -1220,13 +1220,13 @@ em, i {
   font-style: italic; }
 
 p {
-  margin: 0 0 2.25em 0; }
+  margin: 0 0 0.75em 0; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #777;
   font-weight: 700;
   line-height: 1em;
-  margin: 0 0 0.5625em 0; }
+  margin: 0 0 0.1875em 0; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     border: 0;
     color: inherit;
@@ -1265,14 +1265,14 @@ sup {
 hr {
   border: 0;
   border-bottom: solid 2px #f4f4f4;
-  margin: 2.25em 0; }
+  margin: 0.75em 0; }
   hr.major {
-    margin: 3.375em 0; }
+    margin: 1.125em 0; }
 
 blockquote {
   border-left: solid 8px #e4e4e4;
   font-style: italic;
-  margin: 0 0 2.25em 0;
+  margin: 0 0 0.75em 0;
   padding: 0.5em 0 0.5em 2em; }
 
 code {
@@ -1287,7 +1287,7 @@ code {
 pre {
   font-family: "Source Code Pro", monospace;
   font-size: 0.9em;
-  margin: 0 0 2.25em 0; }
+  margin: 0 0 0.75em 0; }
   pre code {
     -webkit-overflow-scrolling: touch;
     display: block;
@@ -1311,7 +1311,7 @@ section.special, article.special {
 header p {
   color: #aaa;
   position: relative;
-  margin: 0 0 1.6875em 0; }
+  margin: 0 0 0.5625em 0; }
 header h2 + p {
   font-size: 1.25em;
   margin-top: -0.5em;
@@ -1337,14 +1337,14 @@ header.major h2 {
 
 /* Form */
 form {
-  margin: 0 0 2.25em 0; }
+  margin: 0 0 0.75em 0; }
 
 label {
   color: #777;
   display: block;
   font-size: 0.9em;
   font-weight: 700;
-  margin: 0 0 1.125em 0; }
+  margin: 0 0 0.375em 0; }
 
 input::-moz-focus-inner {
   border: 0;
@@ -1506,7 +1506,7 @@ input[type="radio"] + label:before {
 .box {
   border-radius: 5px;
   border: solid 2px #e4e4e4;
-  margin-bottom: 2.25em;
+  margin-bottom: 0.75em;
   padding: 1.5em; }
   .box > :last-child,
   .box > :last-child > :last-child,
@@ -1551,7 +1551,7 @@ input[type="radio"] + label:before {
     top: 0.25em; }
   .image.fit {
     display: block;
-    margin: 0 0 2.25em 0;
+    margin: 0 0 0.75em 0;
     width: 100%; }
     .image.fit img {
       display: block;
@@ -1565,14 +1565,14 @@ input[type="radio"] + label:before {
 /* List */
 ol {
   list-style: decimal;
-  margin: 0 0 2.25em 0;
+  margin: 0 0 0.75em 0;
   padding-left: 1.25em; }
   ol li {
     padding-left: 0.25em; }
 
 ul {
   list-style: disc;
-  margin: 0 0 2.25em 0;
+  margin: 0 0 0.75em 0;
   padding-left: 1em; }
   ul li {
     padding-left: 0.5em; }
@@ -1591,7 +1591,7 @@ ul {
     ul.feature-icons li {
       text-decoration: none;
       display: inline-block;
-      margin: 0 0 1.6875em 0;
+      margin: 0 0 0.5625em 0;
       padding: 0.35em 0 0 3.5em;
       position: relative;
       vertical-align: top;
@@ -1632,42 +1632,42 @@ ul {
     padding-left: 0; }
     ul.actions li {
       display: inline-block;
-      padding: 0 1.125em 0 0;
+      padding: 0 0.375em 0 0;
       vertical-align: middle; }
       ul.actions li:last-child {
         padding-right: 0; }
     ul.actions.small li {
-      padding: 0 0.5625em 0 0; }
+      padding: 0 0.1875em 0 0; }
     ul.actions.vertical li {
       display: block;
-      padding: 1.125em 0 0 0; }
+      padding: 0.375em 0 0 0; }
       ul.actions.vertical li:first-child {
         padding-top: 0; }
       ul.actions.vertical li > * {
         margin-bottom: 0; }
     ul.actions.vertical.small li {
-      padding: 0.5625em 0 0 0; }
+      padding: 0.1875em 0 0 0; }
       ul.actions.vertical.small li:first-child {
         padding-top: 0; }
     ul.actions.fit {
       display: table;
-      margin-left: -1.125em;
+      margin-left: -0.375em;
       padding: 0;
       table-layout: fixed;
-      width: calc(100% + 1.125em); }
+      width: calc(100% + 0.375em); }
       ul.actions.fit li {
         display: table-cell;
-        padding: 0 0 0 1.125em; }
+        padding: 0 0 0 0.375em; }
         ul.actions.fit li > * {
           margin-bottom: 0; }
       ul.actions.fit.small {
-        margin-left: -0.5625em;
-        width: calc(100% + 0.5625em); }
+        margin-left: -0.1875em;
+        width: calc(100% + 0.1875em); }
         ul.actions.fit.small li {
-          padding: 0 0 0 0.5625em; }
+          padding: 0 0 0 0.1875em; }
 
 dl {
-  margin: 0 0 2.25em 0; }
+  margin: 0 0 0.75em 0; }
 
 /* Table */
 .table-wrapper {
@@ -1675,7 +1675,7 @@ dl {
   overflow-x: auto; }
 
 table {
-  margin: 0 0 2.25em 0;
+  margin: 0 0 0.75em 0;
   width: 100%; }
   table tbody tr {
     border: solid 2px #f4f4f4;
@@ -1762,7 +1762,7 @@ input[type="button"],
   input[type="button"].fit,
   .button.fit {
     display: block;
-    margin: 0 0 1.125em 0;
+    margin: 0 0 0.375em 0;
     width: 100%; }
   input[type="submit"].small,
   input[type="reset"].small,
@@ -1829,8 +1829,8 @@ input[type="button"],
 /* Features */
 .features article {
   border-top: solid 3px #f4f4f4;
-  margin-bottom: 2.25em;
-  padding-top: 2.25em; }
+  margin-bottom: 0.75em;
+  padding-top: 0.75em; }
   .features article:first-child {
     border-top: 0;
     padding-top: 0; }
@@ -1851,6 +1851,7 @@ input[type="button"],
 
 /* Header */
 #header {
+  overflow: auto;
   background: #4acaa8;
   color: #d2f2e9;
   height: 100%;
@@ -1873,7 +1874,7 @@ input[type="button"],
     padding: 3em; }
     #header > header .avatar {
       display: block;
-      margin: 0 auto 2.25em auto;
+      margin: 0 auto 0.75em auto;
       width: 8em; }
     #header > header h1 {
       font-size: 1.75em;
@@ -2169,7 +2170,7 @@ input[type="button"],
   /* Features */
   .features article .image {
     display: block;
-    margin: 0 0 2.25em 0;
+    margin: 0 0 0.75em 0;
     padding-right: 0;
     width: 100%; }
   .features article .inner {
@@ -2187,7 +2188,7 @@ input[type="button"],
     #header > header {
       padding: 2em; }
       #header > header .avatar {
-        margin: 0 auto 1.6875em auto;
+        margin: 0 auto 0.5625em auto;
         width: 6em; }
       #header > header h1 {
         font-size: 1.5em; }
@@ -2240,10 +2241,10 @@ input[type="button"],
 
   /* List */
   ul.actions {
-    margin: 0 0 2.25em 0; }
+    margin: 0 0 0.75em 0; }
     ul.actions li {
       display: block;
-      padding: 1.125em 0 0 0;
+      padding: 0.375em 0 0 0;
       text-align: center;
       width: 100%; }
       ul.actions li:first-child {
@@ -2254,7 +2255,7 @@ input[type="button"],
         ul.actions li > *.icon:before {
           margin-left: -2em; }
     ul.actions.small li {
-      padding: 0.5625em 0 0 0; }
+      padding: 0.1875em 0 0 0; }
       ul.actions.small li:first-child {
         padding-top: 0; }
   ul.feature-icons li {

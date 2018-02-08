@@ -877,6 +877,7 @@
 /* Header */
 
 	#header {
+		overflow: auto;
 		background: _palette(header, bg);
 		color: _palette(header, fg);
 		height: 100%;

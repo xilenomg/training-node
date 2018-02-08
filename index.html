@@ -36,6 +36,9 @@
                     <a href="#what-is-node">What's NODE</a>
                 </li>
                 <li>
+                    <a href="#introduction-to-nvm">Introduction to NVM</a>
+                </li>
+                <li>
                     <a href="#npm-init">NPM init</a>
                 </li>
                 <li>
@@ -81,10 +84,13 @@
                         <p>Exploring Node.JS modules</p>
                         <ul>
                             <li>
-                                <a href="https://nodejs.org/">Node.js</a>
+                                <a href="https://nodejs.org/" target="_blank">Node.js</a>
                             </li>
                             <li>
-                                <a href="https://github.com/xilenomg/training-node">Training Node Presentation</a>
+                                <a href="https://github.com/xilenomg/training-node" target="_blank">Training Node Presentation</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/creationix/nvm" target="_blank">NVM (Node Version Manager)</a>
                             </li>
                         </ul>
                     </header>
@@ -92,9 +98,9 @@
                 </div>
             </section>
             <!-- Two -->
-            <section id="passportjs">
+            <section id="what-is-node">
                 <div class="container">
-                    <h3>Introduction</h3>
+                    <h3>Node.JS</h3>
                     <section>
                         <h4>What?</h4>
                         <p>An asynchronous event driven JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
@@ -123,6 +129,31 @@
                             the task to task queue and the the event loop, as soon as possible, send the callback to the
                             stack. That's how a single-threaded runtime can execute multiple tasks at a time - at least is
                             the idea we have.</p>
+                    </section>
+                </div>
+            </section>
+            <!-- Three -->
+            <section id="introduction-to-nvm">
+                <div class="container">
+                    <h3>NVM</h3>
+                    <section>
+                        <h4>Node Version Manager</h4>
+                        <p>Easiest way to have more than one node version installed.</p>
+                        <p>Follow the instructions to install at <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></p>
+                    </section>
+                    <section>
+                        <h4>Important commands</h4>
+                        <li>Install node version 8</li>
+                        <pre><code>nvm install 8</code></pre>
+                        
+                        <li>It will install latest version of node</li>
+                        <pre><code>nvm install node</code></pre>
+
+                        <li>It will use v8 of node</li>
+                        <pre><code>nvm use 8</code></pre>
+
+                        <li>Set Node v8 as default to be used in any shell</li>
+                        <pre><code>nvm alias default 8</code></pre>
                     </section>
                 </div>
             </section>
