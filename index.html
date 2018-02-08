@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Node</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body>
+    <!-- Header -->
+    <section id="header">
+        <header>
+            <span class="image avatar">
+                <img src="images/avatar.png" alt="" />
+            </span>
+            <h1 id="logo">
+                <a href="#">Node</a>
+            </h1>
+            <p>Node.JS</p>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="#intro" class="active">Introduction</a>
+                </li>
+                <li>
+                    <a href="#what-is-node">What's NODE</a>
+                </li>
+                <li>
+                    <a href="#npm-init">NPM init</a>
+                </li>
+                <li>
+                    <a href="#web-server-with-pure-node">Web server with pure Node</a>
+                </li>
+                <li>
+                    <a href="#file-system">File System (FS)</a>
+                </li>
+                <li>
+                    <a href="#creating-route-module">Creating Route Module</a>
+                </li>
+                <li>
+                    <a href="#events">Events</a>
+                </li>
+                <li>
+                    <a href="#database">Database</a>
+                </li>
+                <li>
+                    <a href="#net-module-working-with-sockets">Net module - working with Sockets</a>
+                </li>
+                <li>
+                    <a href="#process">Process</a>
+                </li>
+                <li>
+                    <a href="#tips">Tips</a>
+                </li>
+            </ul>
+        </nav>
+        <footer>
+            Luis Pérez - lperez@avenuecode.com
+            <br/> Pedro Dias - pdias@avenuecode.com
+        </footer>
+    </section>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <!-- One -->
+            <section id="intro">
+                <div class="container">
+                    <header class="major">
+                        <h2>NodeJS</h2>
+                        <p>Exploring Node.JS modules</p>
+                        <ul>
+                            <li>
+                                <a href="https://nodejs.org/">Node.js</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/xilenomg/training-node">Training Node Presentation</a>
+                            </li>
+                        </ul>
+                    </header>
+                    <p></p>
+                </div>
+            </section>
+            <!-- Two -->
+            <section id="passportjs">
+                <div class="container">
+                    <h3>Introduction</h3>
+                    <section>
+                        <h4>What?</h4>
+                        <p>An asynchronous event driven JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
+                    </section>
+                    <section>
+                        <h4>Why?</h4>
+                        <p>Non-blocking. Scalable. Javascript front and backend.</p>
+                        <p>Non-blocking: Blocking methods execute synchronously and non-blocking methods execute asynchronously.
+                            It means there are no worries of dead-locking the process, since there are no locks. The code
+                            execution does not have to stop for I/O operation, it simply asks for I/O and gets the answer
+                            once it is finished and then deals with the results - the commonly known callbacks.</p>
+                        <p>Scalabe: Since it is non-blocking, multiple connections can be handle concurrently. Upon each connection
+                            the callback is fired, but if there is no work to be done, Node will sleep. Because nothing blocks,
+                            scalable systems are very reasonable to develop in Node.</p>
+                        <p>Javascript: The same programming language you use to create your frontend you will use to build the
+                            backend. It means you can use all features and functionalities of Javascript wherever you want
+                            - without mentioning the community!</p>
+                    </section>
+                    <section>
+                        <h4>How?</h4>
+                        <p>Despite the fact that JavaScript is single-threaded, the event loop is what allows Node.js to perform
+                            non-blocking I/O operations by offloading operations to the system kernel whenever possible.
+                            The event loop is a Javascript structure responsible for taking tasks on the task queue and pushing
+                            then to Javascript stack to be executed. So, in a few words, Node.js sends the tasks as soon
+                            as they enter the stack to the system's APIs to be executed, after the system execute it pushes
+                            the task to task queue and the the event loop, as soon as possible, send the callback to the
+                            stack. That's how a single-threaded runtime can execute multiple tasks at a time - at least is
+                            the idea we have.</p>
+                    </section>
+                </div>
+            </section>
+            <!-- Footer -->
+            <section id="footer">
+                <div class="container">
+                    <ul class="copyright">
+                        <li>&copy; Untitled. All rights reserved.</li>
+                        <li>Design:
+                            <a href="http://html5up.net">HTML5 UP</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollzer.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>
