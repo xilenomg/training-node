@@ -1193,6 +1193,18 @@ body {
 body {
   background: #fff; }
 
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  font-size: 0.8em; }
+  .alert.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba; }
+
 body, input, select, textarea {
   color: #888;
   font-family: "Lato", sans-serif;
@@ -2268,3 +2280,5 @@ input[type="button"],
   input[type="button"],
   .button {
     padding: 0; } }
+
+/*# sourceMappingURL=main.css.map */

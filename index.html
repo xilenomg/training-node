@@ -36,7 +36,7 @@
                     <a href="#what-is-node">What's NODE</a>
                 </li>
                 <li>
-                    <a href="#introduction-to-nvm">Introduction to NVM</a>
+                    <a href="#nvm">NVM</a>
                 </li>
                 <li>
                     <a href="#npm-init">NPM init</a>
@@ -51,7 +51,7 @@
                     <a href="#file-system">File System (FS)</a>
                 </li>
                 <li>
-                    <a href="#creating-route-module">Creating Route Module</a>
+                    <a href="#creating-router-module">Creating Router Module</a>
                 </li>
                 <li>
                     <a href="#events">Events</a>
@@ -133,22 +133,40 @@
                             stack. That's how a single-threaded runtime can execute multiple tasks at a time - at least is
                             the idea we have.</p>
                     </section>
+                    <section>
+                        <h4>Things we can do with Node</h4>
+                        <p>Before we start lets understand the power of Node!</p>
+
+                        <p>Few things you can do using NODE:</p>
+                        <ol>
+                            <li>HTTP/HTTPS server</li>
+                            <li>Async and routine tasks</li>
+                            <li>Open, read, write and remove files</li>
+                            <li>Send emails</li>
+                            <li>Work with Arduino</li>
+                            <li>Connect to Database</li>
+                        </ol>
+                    </section>
+
+
                 </div>
             </section>
 
-            <section id="introduction-to-nvm">
+            <section id="nvm">
                 <div class="container">
                     <h3>NVM</h3>
                     <section>
                         <h4>Node Version Manager</h4>
                         <p>Easiest way to have more than one node version installed.</p>
-                        <p>Follow the instructions to install at <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></p>
+                        <p>Follow the instructions to install at
+                            <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a>
+                        </p>
                     </section>
                     <section>
                         <h4>Important commands</h4>
                         <li>Install node version 8</li>
                         <pre><code>nvm install 8</code></pre>
-                        
+
                         <li>It will install latest version of node</li>
                         <pre><code>nvm install node</code></pre>
 
@@ -166,14 +184,16 @@
                     <h3>NPM init</h3>
                     <section>
                         <h4>Let's start!</h4>
-                        <p>From now on, we will start using Node everytime and the most important thing is how to start it. Create and go to a folder where you will add the node files.</p>
+                        <p>From now on, we will start using Node everytime and the most important thing is how to start it.
+                            Create and go to a folder where you will add the node files.</p>
                         <p>By using your Terminal, go to this folder and let's run our first node command:</p>
                         <pre><code>npm init</code></pre>
-                        <p>You will be asked few questions about this new project you are creating. if you only press Enter (Return) it will use the default value inside parenthesis. </p>
+                        <p>You will be asked few questions about this new project you are creating. if you only press Enter
+                            (Return) it will use the default value inside parenthesis. </p>
                         <img src="images/npm-init.png" />
                         <p>In case all the answers are correct, press Enter again.</p>
                         <p>This process was only to generate a package.json file. </p>
-                        
+
                     </section>
                 </div>
             </section>
@@ -190,7 +210,9 @@
                             <li>Dependencies</li>
                             <li>Author</li>
                             <li>Scripts which can be ran by `npm run start` or `npm run any-script-name`</li>
-                            <li>Read more at <a href="https://docs.npmjs.com/files/package.json">https://docs.npmjs.com/files/package.json</a></li>
+                            <li>Read more at
+                                <a href="https://docs.npmjs.com/files/package.json">https://docs.npmjs.com/files/package.json</a>
+                            </li>
                         </ol>
                         <h5>Package.json example</h5>
                         <img src="images/package.json.png" />
@@ -198,6 +220,329 @@
                 </div>
             </section>
 
+            <section id="package-json">
+                <div class="container">
+                    <h3>Package.json</h3>
+                    <section>
+                        <h4>What's it?</h4>
+                        <p>Basically, this file has a lot of informations about your project:</p>
+                        <ol>
+                            <li>Project name</li>
+                            <li>Project version</li>
+                            <li>Dependencies</li>
+                            <li>Author</li>
+                            <li>Scripts which can be ran by `npm run start` or `npm run any-script-name`</li>
+                            <li>Read more at
+                                <a href="https://docs.npmjs.com/files/package.json">https://docs.npmjs.com/files/package.json</a>
+                            </li>
+                        </ol>
+                        <h5>Package.json example</h5>
+                        <img src="images/package.json.png" />
+                    </section>
+                </div>
+            </section>
+
+            <section id="web-server-with-node">
+                <div class="container">
+                    <h3>Web server with Node</h3>
+                    <section>
+                        <h4>Creating a web server with Node</h4>
+                        <p>From now on, we will see more commands and the course will be more practical.</p>
+                        <h5>Let's start!</h5>
+                        <p>Make sure you have you terminal open on wanted folder where you will work on.</p>
+                        <pre><code>echo "" > index.js</code></pre> Empty file "index.js" was created. Open it! Now write:
+                        <pre><code>console.log("test");</code></pre> Go back to your terminal and type:
+                        <pre><code>node index</code></pre> Result must be:
+                        <pre><code>$ node index
+test</code></pre>
+                        <p>Now we will create our first HTTP server. Node already have a module for it. Let's request it and
+                            use! Clear index.js file and add this:</p>
+                        <pre><code>var http = require('http');
+http.createServer(function(request, response){
+    response.writeHead(200, {'Content-type': 'text/html'});
+    response.end('Welcome to NODE HTTP SERVER');
+}).listen(8088);</code></pre>
+                        <div class="alert alert-warning">
+                            Don't see anything on your terminal? It's time to open your browser and open http://localhost:8088!
+                        </div>
+                        <p>Are you seeing this message: "Welcome to NODE HTTP SERVER"?</p>
+                    </section>
+
+                    <section>
+                        <h4>Returning 404 status</h4>
+                        <p>Let's change few things on it.</p>
+                        <p>Now, instead of returning status 200, let's say this page is not found and return 404. Your code
+                            should looks like this now:</p>
+
+                        <pre><code>var http = require('http');
+http.createServer(function(request, response){
+    response.writeHead(404, {'Content-type': 'text/html'});
+    response.end('404 Not found page');
+}).listen(8088);</code></pre>
+                        <div class="alert alert-warning">
+                            Restart your server, open Inspect Dev Tools, and refresh your page.
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>More ways to write something on HTML</h4>
+                        <p>HTTP module also has more ways to write the response for the client, but you need to remember to
+                            end the response by using</p>
+                        <pre><code>response.end()</code></pre>
+                        <h5>response.write</h5>
+                        <pre><code>var http = require('http');
+http.createServer(function(request, response){
+    response.writeHead(404, {'Content-type': 'text/html'});
+    response.write('<html>');
+    response.write('<body>');
+    response.write('&lt;h1&gt;Hello, World!&lt;/h1&gt;');
+    response.write('</body>');
+    response.write('</html>');
+    response.end();
+}).listen(8088);</code></pre> It doesn't look smart, though. What if we read this content from a file?
+                    </section>
+                </div>
+            </section>
+
+            <section id="file-system">
+                <div class="container">
+                    <h3>File System (FS)</h3>
+                    <a href="https://nodejs.org/api/fs.html">https://nodejs.org/api/fs.html</a>
+                    <p>The fs module provides an API for interacting with the file system in a manner closely modeled around
+                        standard POSIX (Portable Operating System Interface) functions. </p>
+                    <p>All file system operations have synchronous and asynchronous forms.</p>
+                    <p>Some things you can do with FS:
+                        <ol>
+                            <li>Read files</li>
+                            <li>Create files</li>
+                            <li>Update files</li>
+                            <li>Delete files</li>
+                            <li>Rename files</li>
+                        </ol>
+                    </p>
+
+                    <p>Going back to our example, we will read template.html and add it to the response.</p>
+                    <p>Create a file template.html and add some html tags on it</p>
+                    <pre><code>&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Welcome back again&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p>index.js</p>
+                    <pre><code>var http = require('http');
+var fs = require('fs');
+
+http.createServer(function(request, response){
+    fs.readFile('template.html', function(err, data) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(data);
+    response.end();
+    });
+}).listen(8088);</code></pre>
+
+                    <p>It's much better now, but there is something weird on it. All requests will take the client to the same
+                        resource. Try it localhost:8088/your-name. We must create a Router Module</p>
+                </div>
+            </section>
+
+            <section id="creating-router-module">
+                <div class="container">
+                    <h3>Creating Router Module</h3>
+                    <p>All requests received by the server has 2 importants properties:</p>
+                    <ol>
+                        <li>Method</li>
+                        <li>URL</li>
+                    </ol>
+
+                    <p>Method has the method name used by the client to access the resource. It could be GET, POST, PUT, DELETE,
+                        OPTIONS etc.</p>
+                    <p>URL is the path used by the client which we will use to route to the correct resource</p>
+
+                    <pre><code>var http = require('http');
+var fs = require('fs');
+
+http.createServer(function(request, response){
+    console.log(request.method, request.url);
+    response.end();
+}).listen(8088);</code></pre>
+
+                    <p>Paste this code if you want to see the values for .method and .url. Go to your browser, refresh the page
+                        and check the log on terminal.</p>
+
+                    <p>Now, let's change it to show different contents for distinct urls.</p>
+
+                    <p>Let's first create another template file, named as template2.html. Then we will create an IF statement
+                        and the condition will be if METHOD is GET and URL is '/' or '/test</p>
+                    <pre><code>var http = require('http');
+var fs = require('fs');
+
+http.createServer(function(request, response){
+    console.log(request.method, request.url);
+    if (request.method === 'GET' && request.url === '/') {
+    fs.readFile('template.html', function(err, data) {
+        response.writeHead(200, {'Content-Type': 'text/html'});
+        response.write(data);
+        response.end();
+    });
+    }
+    else if (request.method === 'GET' && request.url === '/test') {
+    fs.readFile('template2.html', function(err, data) {
+        response.writeHead(200, {'Content-Type': 'text/html'});
+        response.write(data);
+        response.end();
+    });
+    }
+}).listen(8088);</code></pre>
+
+                    <p>Again, go to your browser and access localhost:8088 and localhost:8088/test. It should work!</p>
+                    <p>It works, but we still don't have a module. Keep your code like this will work but it would be hard to
+                        do any maintenance when it gets bigger.</p>
+                    <p>The module we will create will handle GET and POST requests only for now, and will expect as parameter
+                        only the path and the callback. The main idea is to have it like:</p>
+                    <pre><code>ourModule.get('/', function(request, response){});</code></pre>
+                    <pre><code>ourModule.post('/', function(request, response){});</code></pre>
+                    <p>The first thing we need to do is create a modules folder within our module. Let's call it as RouterModule.</p>
+                    <p>modules/router.js</p>
+                    <pre><code>var routes = {
+    get: {},
+    post: {}
+    };
+    
+    var router = function () {
+    this.get = function (path, callback) {
+        routes.get[path] = callback;
+    };
+    this.post = function (path, callback) {
+        routes.post[path] = callback;
+    };
+    this.handler = function(request, response){
+        var callback = routes[request.method.toLowerCase()][request.url];
+        if (callback){
+        callback(request, response);
+        }
+        else{
+        response.writeHead(404);
+        response.write("404 NOT FOUND");
+        response.end();
+        }
+    };
+    return this;
+};
+
+module.exports = router;</code></pre>
+                    <p>index.js </p>
+                    <pre><code>var http = require('http');
+var fs = require('fs');
+var router = require('./modules/router');
+var Router = new router();
+
+Router.get('/', function(request, response){
+    fs.readFile('template.html', function(err, data) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(data);
+    response.end();
+    });
+});
+
+Router.get('/test', function(request, response){
+    fs.readFile('template2.html', function(err, data) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(data);
+    response.end();
+    });
+});
+
+http.createServer(function(request, response){
+    Router.handler(request, response);
+}).listen(8088, function () {
+    console.log("Server listening to port 8088");
+});</code></pre>
+                    <p>Using this module, our routes are now out of createServer method and was replaced by router.handler from
+                        our module.</p>
+
+                    <p>Taking a look on the module code, there are:</p>
+                    <ol>
+                        <li>Routes object</li>
+                        <li>Router module</li>
+                    </ol>
+
+                    <p>At the end, we can see `module.exports = router`. That means we are exposing (or returning) to require caller
+                        only Router Module and the rest are to be used only inside our module.</p>
+
+                    <p>Now we know how to create our own module, let's remove all the routes from index.js. Any idea?</p>
+                    <p>./routes.js</p>
+                    <pre><code>var fs = require('fs');
+var RouterModule = require('./modules/router');
+var Router = new RouterModule();
+
+Router.get('/', function(request, response){
+    fs.readFile('template.html', function(err, data) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(data);
+    response.end();
+    });
+});
+
+Router.get('/test', function(request, response){
+    fs.readFile('template2.html', function(err, data) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(data);
+    response.end();
+    });
+});
+
+module.exports = Router;</code></pre>
+                    <p>index.js</p>
+                    <pre><code>var http = require('http');
+var routesSite = require('./routes');
+
+http.createServer(function(request, response){
+  routesSite.handler(request, response);
+}).listen(8088, function () {
+  console.log("Server listening to port 8088");
+});`
+
+Now, lets send each request to a specific controller:
+routes.js
+`var RouterModule = require('./modules/router');
+var BaseController = require('./controllers/BaseController');
+var Router = new RouterModule();
+
+Router.get('/', function(request, response){
+  BaseController.home(request, response);
+});
+
+Router.get('/test', function(request, response){
+  BaseController.test(request, response);
+});
+
+module.exports = Router;</code></pre>
+                    <p>controllers/BaseController.js</p>
+                    <pre><code>var fs = require('fs');
+var BaseController = {
+  home: function (request, response) {
+    fs.readFile('template.html', function (err, data) {
+      response.writeHead(200, {
+        'Content-Type': 'text/html'
+      });
+      response.write(data);
+      response.end();
+    });
+  },
+  test: function(request, response){
+    fs.readFile('template2.html', function(err, data) {
+      response.writeHead(200, {'Content-Type': 'text/html'});
+      response.write(data);
+      response.end();
+    });
+  }
+};
+
+module.exports = BaseController;</code></pre>
+                </div>
+            </section>
 
             <!-- Footer -->
             <section id="footer">
