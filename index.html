@@ -111,16 +111,19 @@
                     <section>
                         <h4>Why?</h4>
                         <p>Non-blocking. Scalable. Javascript front and backend.</p>
-                        <p><strong>Non-blocking</strong>: Blocking methods execute synchronously and non-blocking methods execute asynchronously.
-                            It means there are no worries of dead-locking the process, since there are no locks. The code
-                            execution does not have to stop for I/O operation, it simply asks for I/O and gets the answer
-                            once it is finished and then deals with the results - the commonly known callbacks.</p>
-                        <p><strong>Scalabe</strong>: Since it is non-blocking, multiple connections can be handle concurrently. Upon each connection
-                            the callback is fired, but if there is no work to be done, Node.js will sleep. Because nothing blocks,
-                            scalable systems are very reasonable to develop in Node.</p>
-                        <p><strong>Javascript</strong>: The same programming language you use to create your frontend you will use to build the
-                            backend. It means you can use all features and functionalities of Javascript wherever you want
-                            - without mentioning the community!</p>
+                        <p>
+                            <strong>Non-blocking</strong>: Blocking methods execute synchronously and non-blocking methods execute
+                            asynchronously. It means there are no worries of dead-locking the process, since there are no
+                            locks. The code execution does not have to stop for I/O operation, it simply asks for I/O and
+                            gets the answer once it is finished and then deals with the results - the commonly known callbacks.</p>
+                        <p>
+                            <strong>Scalabe</strong>: Since it is non-blocking, multiple connections can be handle concurrently.
+                            Upon each connection the callback is fired, but if there is no work to be done, Node.js will
+                            sleep. Because nothing blocks, scalable systems are very reasonable to develop in Node.</p>
+                        <p>
+                            <strong>Javascript</strong>: The same programming language you use to create your frontend you will use
+                            to build the backend. It means you can use all features and functionalities of Javascript wherever
+                            you want - without mentioning the community!</p>
                     </section>
                     <section>
                         <h4>How?</h4>
@@ -136,34 +139,39 @@
                     <section>
                         <h4>Modules</h4>
                         <p>
-                            In Node's module system, each file is treated as a separate module. That way, you can easily
-                            divide your code into modules using a project pattern or a convenient way you find most useful. When writing a module,
-                            it must exposed so it can be used - or even reused - in other places inside the application. This is done by
-                            the object<code>module.exports</code>, which is created by Node's module system. Consider the following example, the <code>math.js</code> file:
+                            In Node's module system, each file is treated as a separate module. That way, you can easily divide your code into modules
+                            using a project pattern or a convenient way you find most useful. When writing a module, it must
+                            exposed so it can be used - or even reused - in other places inside the application. This is
+                            done by the object
+                            <code>module.exports</code>, which is created by Node's module system. Consider the following example,
+                            the
+                            <code>math.js</code> file:
 
-<pre><code>const square = (n) => {
+                            <pre><code>const square = (n) => {
     return n * n;
 }
 module.exports = square;
-</code></pre>
-
-                            And wherever you may want to use this module, you must import it using the <i>require</i> function:
-<pre><code>const sqr = require('./math');
+</code></pre> And wherever you may want to use this module, you must import it using the
+                            <i>require</i> function:
+                            <pre><code>const sqr = require('./math');
 console.log(sqr(3)); // it prints 9
-</code></pre>
-                            This opens for creation of third-party modules, and there are a lot! We'll see in a little while that we can
-                            use a package manager to install modules that are needed in our code. These modules are installed inside the <code>node_modules</code>
+</code></pre> This opens for creation of third-party modules, and there are a lot! We'll see in a little while
+                            that we can use a package manager to install modules that are needed in our code. These modules
+                            are installed inside the
+                            <code>node_modules</code>
                             folder of our application structure. To import these modules and any built-in modules shipped with Node.js, you don't need
                             the relative path. Example:
-<pre><code>const path = require('path'); // built-in
+                            <pre><code>const path = require('path'); // built-in
 const express = require('express'); // 3rd party
-</code></pre>
-                            For more information, check the <a href="https://nodejs.org/api/modules.html">modules API</a>
+</code></pre> For more information, check the
+                            <a href="https://nodejs.org/api/modules.html">modules API</a>
                         </p>
                         <h5>Process</h5>
                         <p>
-                            The <code>process</code> object is a global that provides information about, and control over, the current Node.js process. As a global,
-                            it is always available to Node.js applications without using <code>require()</code>.
+                            The
+                            <code>process</code> object is a global that provides information about, and control over, the current
+                            Node.js process. As a global, it is always available to Node.js applications without using
+                            <code>require()</code>.
                         </p>
                     </section>
                     <section>
@@ -216,9 +224,9 @@ const express = require('express'); // 3rd party
                 <div class="container">
                     <h3>NPM</h3>
                     <p>NPM stands for Node Package Manager and it is the tool that helps us keep our project's metadata organized.
-                        You will use NPM to install, share and distribute code; manage dependencies; create automated tasks; and a few others.
-                        It contains now 470K packages at the moment. Probably you can find a package for every purpose and, if you don't,
-                        you can create your own package and share with the community.
+                        You will use NPM to install, share and distribute code; manage dependencies; create automated tasks;
+                        and a few others. It contains now 470K packages at the moment. Probably you can find a package for
+                        every purpose and, if you don't, you can create your own package and share with the community.
                     </p>
                     <section>
                         <h4>Init</h4>
@@ -236,8 +244,8 @@ const express = require('express'); // 3rd party
                     <section>
                         <h4>Package.json</h4>
                         <p>This is the way NPM keeps track of dependencies, tasks, information and more regarding the application.
-                            For that, we must be very careful when editing this file: only do that when you are sure of what you are doing.
-                            Basically, this file has a lot of informations about your project:</p>
+                            For that, we must be very careful when editing this file: only do that when you are sure of what
+                            you are doing. Basically, this file has a lot of informations about your project:</p>
                         <ol>
                             <li>Project name</li>
                             <li>Project version</li>
@@ -267,8 +275,8 @@ const express = require('express'); // 3rd party
                         <pre><code>node index</code></pre> Result must be:
                         <pre><code>$ node index
 test</code></pre>
-                        <p>Now we will create our first HTTP server. Node.js already have a module for it. Let's request it and
-                            use! Clear index.js file and add this:</p>
+                        <p>Now we will create our first HTTP server. Node.js already have a module for it. Let's request it
+                            and use! Clear index.js file and add this:</p>
                         <pre><code>var http = require('http');
 http.createServer(function(request, response){
     response.writeHead(200, {'Content-type': 'text/html'});
@@ -644,6 +652,162 @@ http.createServer(function(request, response){
             <section id="database">
                 <div class="container">
                     <h3>Database</h3>
+                    <p>It's possible to connect lot of Databases on your application. There are modules for MSQL Server, MongoDB,
+                        MySQL, Maria DB etc. We will use MySQL but they have almost the same way to use.</p>
+                    <p>First thing we need to do is to download the module package from name (
+                        <a href="https://www.npmjs.com/package/mysql">https://www.npmjs.com/package/mysql</a>)</p>
+                    <pre><code>npm install mysql --save</code></pre>
+                    <p>In order to have our project well organized, we will keep all Database actions at the same file. Then
+                        if we decide to move to another DB it will be a lot easier.</p>
+                    <p>There is a Design Pattern named Services which we use to centralize files access, databases access and
+                        so on.</p>
+                    <p>How to work with mysql on node:</p>
+                    <ul>
+                        <li>Create connection with database passing user, password, host and database</li>
+                        <li>Connect to database</li>
+                        <li>Send query while connected</li>
+                        <li>Close Connection</li>
+                    </ul>
+
+                    <p>Let's see some code</p>
+
+                    <p>Database.js</p>
+                    <pre><code>var mysql = require('mysql');
+// You can add CONFIG info in another files if you want.
+var config = {
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "mydb"
+};
+
+var Database = function () {
+    this.createConnection = function () {
+    var con = mysql.createConnection(config);
+    return con;
+    }
+    return this;
+};
+
+module.exports = Database;</code></pre>
+
+                    <p>BaseController.js</p>
+                    <pre><code>var BaseController = {
+    createTable: function (request, response) {
+        employeeService.createTable(function (result) {
+        response.end(JSON.stringify(result));
+        });
+    },
+    insertEmployee: function (request, response) {
+        employeeService.insertEmployee(function (result) {
+        response.end(JSON.stringify(result));
+        });
+    },
+    insertMultipleEmployee: function (request, response) {
+        employeeService.insertMultipleEmployees(function (result) {
+        response.end(JSON.stringify(result));
+        });
+    },
+    selectEmployees: function (request, response) {
+        employeeService.selectEmployees(function (result) {
+        response.end(JSON.stringify(result));
+        });
+    },
+    ...</code></pre>
+
+                    <p>routes.js</p>
+                    <pre><code>Router.get('/createTable', function(request, response){
+BaseController.createTable(request, response);
+});
+
+Router.get('/insertEmployee', function(request, response){
+BaseController.insertEmployee(request, response);
+});
+
+Router.get('/insertMultipleEmployee', function(request, response){
+BaseController.insertMultipleEmployee(request, response);
+});
+
+Router.get('/selectEmployees', function(request, response){
+BaseController.selectEmployees(request, response);
+});</code></pre>
+
+                    <p>employeeService.js</p>
+                    <pre><code>var Database = require('../modules/database');
+var database = new Database();
+
+var EmployeeService = {
+    createTable: function (callback) {
+    console.log('creating table');
+    var con = database.createConnection();
+    con.connect(function (err) {
+        if (err) throw err;
+
+        var sql = "CREATE TABLE employee (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))";
+        con.query(sql, function (err, result) {
+        if (err) throw err;
+        callback(result);
+        console.log("Table created: ", result);
+        });
+    });
+    },
+    insertEmployee: function (callback) {
+    console.log('inserting employee');
+    var con = database.createConnection();
+    con.connect(function (err) {
+        // insert data
+        var sql = "INSERT INTO employee (name, address) VALUES ('Company Inc', 'Highway 37')";
+        con.query(sql, function (err, result) {
+        if (err) throw err;
+        callback(result);
+        console.log("1 record inserted");
+        })
+    });
+    },
+    insertMultipleEmployees: function (callback) {
+    console.log('inserting multiples employee');
+    var con = database.createConnection();
+    con.connect(function (err) {
+        // insert data
+        var sql = "INSERT INTO employee (name, address) VALUES ?";
+        var values = [
+        ['John', 'Highway 71'],
+        ['Peter', 'Lowstreet 4'],
+        ['Amy', 'Apple st 652'],
+        ['Hannah', 'Mountain 21'],
+        ['Michael', 'Valley 345'],
+        ['Sandy', 'Ocean blvd 2'],
+        ['Betty', 'Green Grass 1'],
+        ['Richard', 'Sky st 331'],
+        ['Susan', 'One way 98'],
+        ['Vicky', 'Yellow Garden 2'],
+        ['Ben', 'Park Lane 38'],
+        ['William', 'Central st 954'],
+        ['Chuck', 'Main Road 989'],
+        ['Viola', 'Sideway 1633']
+        ];
+        con.query(sql, [values], function (err, result) {
+        if (err) throw err;
+        callback(result);
+        console.log("Number of records inserted: " + result.affectedRows);
+        });
+    });
+    },
+    selectEmployees: function (callback) {
+    console.log('selecting employee');
+    var con = database.createConnection();
+    con.connect(function (err) {
+        con.query("SELECT name, address FROM employee", function (err, result, fields) {
+        if (err) throw err;
+        callback(result);
+        console.log(result);
+        });
+    });
+    }
+};
+
+module.exports = EmployeeService;</code></pre>
+
                 </div>
             </section>
 
