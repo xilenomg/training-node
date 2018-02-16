@@ -811,6 +811,104 @@ module.exports = EmployeeService;</code></pre>
                 </div>
             </section>
 
+            <section id="net-module-working-with-sockets">
+                <div class="container">
+                    <h3>NET Module - Working with Sockets</h3>
+                    <p>One great thing we can do with Node is handling SOCKETS really well. It's usefull to create anything
+                        Real Time like chats, send notifications, monitoring etc.</p>
+                    <p>For example, i would like to monitor my server and notify me when someone access the home path.</p>
+
+                    <p>I created a server where all the messages will go to. It's open on 9954 and my local ip is ___.___.___.___
+                        .</p>
+
+                    <p>Let me show how simple it is.</p>
+
+                    <p>socket-server.js</p>
+                    <pre><code>var net = require('net');
+var server = new net.Server();
+
+server.on('connection', function(socket) {
+    socket.setEncoding('utf8');
+    socket.on('data', function(data) {
+        console.log('Received:', data);
+    });
+
+    socket.on('error', function() {
+        console.log('Socket error!');
+    });
+});
+
+server.listen(9954, function() {
+    console.log('Server is listening!');
+});</code></pre>
+                    <p>and now, i will show how I send the message. First I am creating a Socket Client:</p>
+                    <p>socket.js</p>
+                    <pre><code>var net = require('net');
+var _isConnected = false;
+
+var client = new net.Socket();
+
+client.on('data', function (data) {
+    console.log('Received: ' + data);
+});
+
+client.on('close', function () {
+    _isConnected = false;
+    console.log('Connection closed');
+});
+
+client.on('error', function (err) {
+    console.log(err);
+    _isConnected = false;
+    if (err.code === 'EPIPE') {
+    // you can reconnect, do nothing.
+    }
+});
+
+var SocketClient = {
+    connect: function(){
+    client.connect(9954, '127.0.0.1', function () {
+        _isConnected = true;
+        console.log('Connected');
+    });
+    },
+    write: function (url, metodo) {
+        if (this.isConnected()){
+            client.write('URL: ' + url + ' - Metodo:' + metodo);
+        }
+        else{
+            client.destroy();
+            console.log("reconnecting...");
+            this.connect();
+        }
+    },
+    isConnected: function(){
+    return _isConnected;
+    }
+};
+
+SocketClient.connect();
+module.exports = SocketClient;</code></pre>
+
+
+                    <p>BaseController.js</p>
+                    <pre><code>var socket = require('./../socket');</code></pre>
+                    <pre><code>...
+home: function (request, response) {
+    socket.write('User accessed home');
+    fs.readFile('template.html', function (err, data) {
+        eventEmitter.emit('myCustomEvent');
+        response.writeHead(200, {
+        'Content-Type': 'text/html'
+        });
+        response.write(data);
+        response.end();
+    });
+},
+...</code></pre>
+                </div>
+            </section>
+
             <section id="process">
                 <div class="container">
                     <h3>Process</h3>
