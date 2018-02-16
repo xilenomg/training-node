@@ -468,8 +468,8 @@ http.createServer(function(request, response){
                         <li>Router module</li>
                     </ol>
 
-                    <p>At the end, we can see `module.exports = router`. That means we are exposing (or returning) to require caller
-                        only Router Module and the rest are to be used only inside our module.</p>
+                    <p>At the end, we can see `module.exports = router`. That means we are exposing (or returning) to require
+                        caller only Router Module and the rest are to be used only inside our module.</p>
 
                     <p>Now we know how to create our own module, let's remove all the routes from index.js. Any idea?</p>
                     <p>./routes.js</p>
@@ -541,6 +541,97 @@ var BaseController = {
 };
 
 module.exports = BaseController;</code></pre>
+                </div>
+            </section>
+
+            <section id="events">
+                <div class="container">
+                    <h3>Events</h3>
+                    <a href="https://nodejs.org/api/events.html">https://nodejs.org/api/events.html</a>
+                    <p>Node.js has a built-in module, called "Events", where you can create, fire, and listen for your own events.
+                        To use events, you must create the handler, listen and trigger it.</p>
+                    <pre><code>var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+// Handler
+var myEventHandler = function () {
+    console.log('Handling event');
+}
+
+// Listening to event
+eventEmitter.on('myCustomEvent', myEventHandler);
+
+// Firing event
+eventEmitter.emit('myCustomEvent');</code></pre>
+                    <p>You must be very careful when using events. </p>
+                    <ul>
+                        <li>Each instance of events.EventEmitter will only listen to events defined for them. If you have eventEmitter1
+                            and eventEmitter2 and both with same event name and just call eventEmitter1.emit, dont expect
+                            eventEmitter2 events to be triggered</li>
+                        <li>You should never emit event before define listeners for it.</li>
+                        <li>Make sure same instance of events.EventEmitter are shared between the files/classes you want, otherwise
+                            it will not work.</li>
+                    </ul>
+
+                    <p>Let's add Events on our example. </p>
+
+                    <p>We will create a events.js file to share same eventEmitter instance between some files.</p>
+                    <pre><code>var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+module.exports = eventEmitter;</code></pre>
+
+                    <p>BaseController.js</p>
+                    <pre><code>var fs = require('fs');
+var eventEmitter = require('../events');
+
+var BaseController = {
+    home: function (request, response) {
+    fs.readFile('template.html', function (err, data) {
+        eventEmitter.emit('myCustomEvent');
+        response.writeHead(200, {
+        'Content-Type': 'text/html'
+        });
+        response.write(data);
+        response.end();
+    });
+    },
+    test: function(request, response){
+    fs.readFile('template2.html', function(err, data) {
+        response.writeHead(200, {'Content-Type': 'text/html'});
+        response.write(data);
+        response.end();
+    });
+    }
+};
+
+module.exports = BaseController;</code></pre>
+
+                    <p>index.js</p>
+                    <pre><code>var http = require('http');
+var routesSite = require('./routes');
+var eventEmitter = require('./events');
+//Create an event handler:
+var myEventHandler = function () {
+  console.log('Event triggered');
+}
+
+//Assign the event handler to an event:
+eventEmitter.on('myCustomEvent', myEventHandler);
+
+
+http.createServer(function(request, response){
+  routesSite.handler(request, response);
+}).listen(8088, function () {
+  console.log("Server listening to port 8088");
+});</code></pre>
+
+                </div>
+            </section>
+
+            <section id="database">
+                <div class="container">
+                    <h3>Database</h3>
                 </div>
             </section>
 
