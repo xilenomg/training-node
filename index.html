@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>Node</title>
+    <title>Node.js</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -23,9 +23,9 @@
                 <img src="images/avatar.png" alt="" />
             </span>
             <h1 id="logo">
-                <a href="#">Node</a>
+                <a href="#">Node.js</a>
             </h1>
-            <p>Node.JS</p>
+            <p>Javascript in the backend!</p>
         </header>
         <nav id="nav">
             <ul>
@@ -33,7 +33,7 @@
                     <a href="#intro" class="active">Introduction</a>
                 </li>
                 <li>
-                    <a href="#what-is-node">What's NODE</a>
+                    <a href="#what-is-node">What is Node.js</a>
                 </li>
                 <li>
                     <a href="#nvm">NVM</a>
@@ -42,7 +42,7 @@
                     <a href="#npm">NPM</a>
                 </li>
                 <li>
-                    <a href="#web-server-with-node">Web server with Node</a>
+                    <a href="#web-server-with-node">Web server with Node.js</a>
                 </li>
                 <li>
                     <a href="#file-system">File System (FS)</a>
@@ -80,17 +80,20 @@
             <section id="intro">
                 <div class="container">
                     <header class="major">
-                        <h2>NodeJS</h2>
-                        <p>Exploring Node.JS modules</p>
+                        <h2>Node.js</h2>
+                        <p>Some useful links</p>
                         <ul>
                             <li>
                                 <a href="https://nodejs.org/" target="_blank">Node.js</a>
                             </li>
                             <li>
-                                <a href="https://github.com/xilenomg/training-node" target="_blank">Training Node Presentation</a>
+                                <a href="https://github.com/xilenomg/training-node" target="_blank">Training Node.js Presentation</a>
                             </li>
                             <li>
                                 <a href="https://github.com/creationix/nvm" target="_blank">NVM (Node Version Manager)</a>
+                            </li>
+                            <li>
+                                <a href="https://www.npmjs.com/">NPM (Node Package Manager)</a>
                             </li>
                         </ul>
                     </header>
@@ -100,7 +103,7 @@
 
             <section id="what-is-node">
                 <div class="container">
-                    <h3>Node.JS</h3>
+                    <h3>Node.js</h3>
                     <section>
                         <h4>What?</h4>
                         <p>An asynchronous event driven JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
@@ -108,14 +111,14 @@
                     <section>
                         <h4>Why?</h4>
                         <p>Non-blocking. Scalable. Javascript front and backend.</p>
-                        <p>Non-blocking: Blocking methods execute synchronously and non-blocking methods execute asynchronously.
+                        <p><strong>Non-blocking</strong>: Blocking methods execute synchronously and non-blocking methods execute asynchronously.
                             It means there are no worries of dead-locking the process, since there are no locks. The code
                             execution does not have to stop for I/O operation, it simply asks for I/O and gets the answer
                             once it is finished and then deals with the results - the commonly known callbacks.</p>
-                        <p>Scalabe: Since it is non-blocking, multiple connections can be handle concurrently. Upon each connection
-                            the callback is fired, but if there is no work to be done, Node will sleep. Because nothing blocks,
+                        <p><strong>Scalabe</strong>: Since it is non-blocking, multiple connections can be handle concurrently. Upon each connection
+                            the callback is fired, but if there is no work to be done, Node.js will sleep. Because nothing blocks,
                             scalable systems are very reasonable to develop in Node.</p>
-                        <p>Javascript: The same programming language you use to create your frontend you will use to build the
+                        <p><strong>Javascript</strong>: The same programming language you use to create your frontend you will use to build the
                             backend. It means you can use all features and functionalities of Javascript wherever you want
                             - without mentioning the community!</p>
                     </section>
@@ -131,8 +134,7 @@
                             the idea we have.</p>
                     </section>
                     <section>
-                        <h4>Some basics</h4>
-                        <h5>Modules</h5>
+                        <h4>Modules</h4>
                         <p>
                             In Node's module system, each file is treated as a separate module. That way, you can easily 
                             divide your code into modules using a project pattern or a convenient way you find most useful. When writing a module,
@@ -142,7 +144,6 @@
 <pre><code>const square = (n) => {
     return n * n;
 }
-
 module.exports = square;
 </code></pre>
 
@@ -150,27 +151,26 @@ module.exports = square;
 <pre><code>const sqr = require('./math');
 console.log(sqr(3)); // it prints 9
 </code></pre>
-                            This opens for third-party modules, which the community is very strong and helpful. We'll see a little ahead that we can 
-                            use a package manager to install modules that are need in our code. These modules are installed inside the <code>node_modules</code> 
-                            folder of our application structure. To import these modules and any built-in module that comes shipped with Node, you don't need 
+                            This opens for creation of third-party modules, and there are a lot! We'll see in a little while that we can 
+                            use a package manager to install modules that are needed in our code. These modules are installed inside the <code>node_modules</code> 
+                            folder of our application structure. To import these modules and any built-in modules shipped with Node.js, you don't need 
                             the relative path. Example:
-                            <code>
-                                const path = require('path'); // built-in
-                                const express = require('express'); // 3rd party
-                            </code>
+<pre><code>const path = require('path'); // built-in
+const express = require('express'); // 3rd party
+</code></pre>
                             For more information, check the <a href="https://nodejs.org/api/modules.html">modules API</a>
                         </p>
                         <h5>Process</h5>
                         <p>
                             The <code>process</code> object is a global that provides information about, and control over, the current Node.js process. As a global, 
-                            it is always available to Node.js applications without using require().
+                            it is always available to Node.js applications without using <code>require()</code>.
                         </p>
                     </section>
                     <section>
                         <h4>Things we can do with Node</h4>
                         <p>Before we start lets understand the power of Node!</p>
 
-                        <p>Few things you can do using NODE:</p>
+                        <p>Few things you can do using Node.js:</p>
                         <ol>
                             <li>HTTP/HTTPS server</li>
                             <li>Async and routine tasks</li>
@@ -190,23 +190,23 @@ console.log(sqr(3)); // it prints 9
                     <h3>NVM</h3>
                     <section>
                         <h4>Node Version Manager</h4>
-                        <p>Easiest way to have more than one node version installed.</p>
+                        <p>Easiest way to have more than one Node.js version installed.</p>
                         <p>Follow the instructions to install at
                             <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a>
                         </p>
                     </section>
                     <section>
                         <h4>Important commands</h4>
-                        <li>Install node version 8</li>
+                        <li>Install Node.js version 8</li>
                         <pre><code>nvm install 8</code></pre>
 
-                        <li>It will install latest version of node</li>
+                        <li>It will install latest version of Node.js</li>
                         <pre><code>nvm install node</code></pre>
 
-                        <li>It will use v8 of node</li>
+                        <li>It will use version 8 of Node.js</li>
                         <pre><code>nvm use 8</code></pre>
 
-                        <li>Set Node v8 as default to be used in any shell</li>
+                        <li>Set Node.js version 8 as default to be used in any shell</li>
                         <pre><code>nvm alias default 8</code></pre>
                     </section>
                 </div>
@@ -215,11 +215,16 @@ console.log(sqr(3)); // it prints 9
             <section id="npm">
                 <div class="container">
                     <h3>NPM</h3>
+                    <p>NPM stands for Node Package Manager and it is the tool that helps us keep our project's metadata organized. 
+                        You will use NPM to install, share and distribute code; manage dependencies; create automated tasks; and a few others.
+                        It contains now 470K packages at the moment. Probably you can find a package for every purpose and, if you don't, 
+                        you can create your own package and share with the community.
+                    </p>
                     <section>
-                        <h4>Let's start!</h4>
-                        <p>From now on, we will start using Node everytime and the most important thing is how to start it.
-                            Create and go to a folder where you will add the node files.</p>
-                        <p>By using your Terminal, go to this folder and let's run our first node command:</p>
+                        <h4>Init</h4>
+                        <p>From now on, we will start using Node.js everytime and the most important thing is how to start it.
+                            Create and go to a folder where you will add the Node.js files.</p>
+                        <p>By using your Terminal, go to this folder and let's run our first Node.js command:</p>
                         <pre><code>npm init</code></pre>
                         <p>You will be asked few questions about this new project you are creating. if you only press Enter
                             (Return) it will use the default value inside parenthesis. </p>
@@ -228,10 +233,11 @@ console.log(sqr(3)); // it prints 9
                         <p>This process was only to generate a package.json file. </p>
 
                     </section>
-                    <h3>Package.json</h3>
                     <section>
-                        <h4>What's it?</h4>
-                        <p>Basically, this file has a lot of informations about your project:</p>
+                        <h4>Package.json</h4>
+                        <p>This is the way NPM keeps track of dependencies, tasks, information and more regarding the application.
+                            For that, we must be very careful when editing this file: only do that when you are sure of what you are doing. 
+                            Basically, this file has a lot of informations about your project:</p>
                         <ol>
                             <li>Project name</li>
                             <li>Project version</li>
@@ -248,12 +254,6 @@ console.log(sqr(3)); // it prints 9
                 </div>
             </section>
 
-            <section id="package-json">
-                <div class="container">
-                    
-                </div>
-            </section>
-
             <section id="web-server-with-node">
                 <div class="container">
                     <h3>Web server with Node</h3>
@@ -267,7 +267,7 @@ console.log(sqr(3)); // it prints 9
                         <pre><code>node index</code></pre> Result must be:
                         <pre><code>$ node index
 test</code></pre>
-                        <p>Now we will create our first HTTP server. Node already have a module for it. Let's request it and
+                        <p>Now we will create our first HTTP server. Node.js already have a module for it. Let's request it and
                             use! Clear index.js file and add this:</p>
                         <pre><code>var http = require('http');
 http.createServer(function(request, response){
@@ -483,7 +483,7 @@ http.createServer(function(request, response){
                     <p>At the end, we can see `module.exports = router`. That means we are exposing (or returning) to require
                         caller only Router Module and the rest are to be used only inside our module.</p>
 
-                    <p>Now we know how to create our own module, let's remove all the routes from index.js. Any idea?</p>
+                    <p>Now we know how to create our own module, let's remove all the routes from index.js. Any ideas?</p>
                     <p>./routes.js</p>
                     <pre><code>var fs = require('fs');
 var RouterModule = require('./modules/router');
