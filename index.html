@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <!--
-	Read Only by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Read Only by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 
@@ -39,10 +39,7 @@
                     <a href="#nvm">NVM</a>
                 </li>
                 <li>
-                    <a href="#npm-init">NPM init</a>
-                </li>
-                <li>
-                    <a href="#package-json">Package.json</a>
+                    <a href="#npm">NPM</a>
                 </li>
                 <li>
                     <a href="#web-server-with-node">Web server with Node</a>
@@ -134,6 +131,42 @@
                             the idea we have.</p>
                     </section>
                     <section>
+                        <h4>Some basics</h4>
+                        <h5>Modules</h5>
+                        <p>
+                            In Node's module system, each file is treated as a separate module. That way, you can easily 
+                            divide your code into modules using a project pattern or a convenient way you find most useful. When writing a module,
+                            it must exposed so it can be used - or even reused - in other places inside the application. This is done by 
+                            the object<code>module.exports</code>, which is created by Node's module system. Consider the following example, the <code>math.js</code> file:
+
+<pre><code>const square = (n) => {
+    return n * n;
+}
+
+module.exports = square;
+</code></pre>
+
+                            And wherever you may want to use this module, you must import it using the <i>require</i> function:
+<pre><code>const sqr = require('./math');
+console.log(sqr(3)); // it prints 9
+</code></pre>
+                            This opens for third-party modules, which the community is very strong and helpful. We'll see a little ahead that we can 
+                            use a package manager to install modules that are need in our code. These modules are installed inside the <code>node_modules</code> 
+                            folder of our application structure. To import these modules and any built-in module that comes shipped with Node, you don't need 
+                            the relative path. Example:
+                            <code>
+                                const path = require('path'); // built-in
+                                const express = require('express'); // 3rd party
+                            </code>
+                            For more information, check the <a href="https://nodejs.org/api/modules.html">modules API</a>
+                        </p>
+                        <h5>Process</h5>
+                        <p>
+                            The <code>process</code> object is a global that provides information about, and control over, the current Node.js process. As a global, 
+                            it is always available to Node.js applications without using require().
+                        </p>
+                    </section>
+                    <section>
                         <h4>Things we can do with Node</h4>
                         <p>Before we start lets understand the power of Node!</p>
 
@@ -179,9 +212,9 @@
                 </div>
             </section>
 
-            <section id="npm-init">
+            <section id="npm">
                 <div class="container">
-                    <h3>NPM init</h3>
+                    <h3>NPM</h3>
                     <section>
                         <h4>Let's start!</h4>
                         <p>From now on, we will start using Node everytime and the most important thing is how to start it.
@@ -195,11 +228,6 @@
                         <p>This process was only to generate a package.json file. </p>
 
                     </section>
-                </div>
-            </section>
-
-            <section id="package-json">
-                <div class="container">
                     <h3>Package.json</h3>
                     <section>
                         <h4>What's it?</h4>
@@ -222,23 +250,7 @@
 
             <section id="package-json">
                 <div class="container">
-                    <h3>Package.json</h3>
-                    <section>
-                        <h4>What's it?</h4>
-                        <p>Basically, this file has a lot of informations about your project:</p>
-                        <ol>
-                            <li>Project name</li>
-                            <li>Project version</li>
-                            <li>Dependencies</li>
-                            <li>Author</li>
-                            <li>Scripts which can be ran by `npm run start` or `npm run any-script-name`</li>
-                            <li>Read more at
-                                <a href="https://docs.npmjs.com/files/package.json">https://docs.npmjs.com/files/package.json</a>
-                            </li>
-                        </ol>
-                        <h5>Package.json example</h5>
-                        <img src="images/package.json.png" />
-                    </section>
+                    
                 </div>
             </section>
 
